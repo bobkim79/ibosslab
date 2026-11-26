@@ -538,11 +538,11 @@ footer dd{margin:0;overflow-wrap:anywhere}
     renderer.domElement.className='pet-canvas';
     scene=new T.Scene();
     camera=new T.PerspectiveCamera(22,.727,1,40); camera.position.set(0,1.65,9.6); camera.lookAt(0,1.65,0);
-    scene.add(new T.HemisphereLight(0xffffff,0xcfd9de,.95));
-    var key=new T.DirectionalLight(0xffffff,.75); key.position.set(2.5,4.5,5); scene.add(key);
+    scene.add(new T.HemisphereLight(0xf4f1ea,0x9fb0b8,.62));
+    var key=new T.DirectionalLight(0xfff6e6,.6); key.position.set(2.5,4.5,5); scene.add(key);
     var rim=new T.DirectionalLight(0xbfeaff,.5); rim.position.set(-4,2.5,-3); scene.add(rim);
     function M(c,sh,em){return new T.MeshPhongMaterial({color:c,shininess:sh==null?40:sh,specular:0x555555,emissive:em||0x000000});}
-    var white=M(0xfdf8ec,110), green=M(0xe8601a,60,0x35100a), pale=M(0x55b3c9,30,0x14475a), packG=M(0xe99a1c,40), leafC=new T.MeshBasicMaterial({color:0xf0a020}), earIn=M(0xf4a77a,30,0x4a2210), mouthC=M(0x5a2312,40);
+    var white=M(0xefe7d3,90), green=M(0xe8601a,60,0x35100a), pale=M(0x55b3c9,30,0x14475a), packG=M(0xe99a1c,40), leafC=new T.MeshBasicMaterial({color:0xf0a020}), earIn=M(0xf4a77a,30,0x4a2210), mouthC=M(0x5a2312,40);
     root=new T.Group(); scene.add(root);
     // body
     var body=new T.Mesh(new T.SphereGeometry(1,32,24),white); body.scale.set(.5,.6,.46); body.position.y=.85; root.add(body);
