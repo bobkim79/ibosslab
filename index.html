@@ -221,12 +221,12 @@ footer dd{margin:0;overflow-wrap:anywhere}
 @media (max-width:860px){.pet{width:52px;height:72px}.pet-shadow{width:36px}}
 @media (prefers-reduced-motion:reduce){.pet .ant,.pet .blk,.pet.held .leg-l,.pet.held .leg-r{animation:none}.stage .tab.poke{animation:none}}
 
-.pet.pet3d{width:192px;height:264px}
+.pet.pet3d{width:96px;height:132px}
 .pet.pet3d>svg{display:none}
 .pet-canvas{display:block;pointer-events:none}
-.pet.pet3d .pet-bubble{font-size:1.15rem;padding:10px 15px;border-radius:16px;bottom:calc(100% - 8px)}
+.pet.pet3d .pet-bubble{font-size:1rem;padding:8px 13px;border-radius:14px;bottom:calc(100% - 6px)}
 .rope{width:6px;margin-left:-3px}
-@media (max-width:860px){.pet.pet3d{width:114px;height:157px}.pet.pet3d .pet-bubble{font-size:1rem;padding:8px 12px}.stage .intro{padding-bottom:150px}}
+@media (max-width:860px){.pet.pet3d{width:62px;height:85px}.pet.pet3d .pet-bubble{font-size:.9rem;padding:7px 11px}.stage .intro{padding-bottom:90px}}
 </style>
 
 </head>
@@ -587,12 +587,6 @@ footer dd{margin:0;overflow-wrap:anywhere}
     var pocket=new T.Mesh(new T.SphereGeometry(1,24,14),cream); pocket.scale.set(.27,.19,.09); pocket.position.set(0,-.22,-.17); pack.add(pocket);
     var flap=new T.Mesh(new T.SphereGeometry(1,24,12,0,Math.PI*2,0,Math.PI/2),orangeD); flap.scale.set(.43,.2,.23); flap.position.set(0,.33,0); pack.add(flap);
     var top=new T.Mesh(new T.TorusGeometry(.09,.028,8,16,Math.PI),ink); top.position.set(0,.55,0); pack.add(top);
-    // backpack straps: from the pack around the sides to the chest
-    [-1,1].forEach(function(sgn){
-      var r=R+.035,P=[new T.Vector3(sgn*.3,1.55,-.6)];
-      [[170,1.72],[140,1.74],[110,1.74],[80,1.74],[58,1.72],[42,1.6],[33,1.38]].forEach(function(q){var f=q[0]*D2R; P.push(new T.Vector3(sgn*r*Math.sin(f),q[1],r*Math.cos(f)));});
-      root.add(new T.Mesh(new T.TubeGeometry(new T.CatmullRomCurve3(P),40,.05,8,false),ink));
-    });
     // arms
     function arm(sgn){var g=new T.Group(); g.position.set(sgn*.62,1.78,0); var m=new T.Mesh(new T.CylinderGeometry(.11,.1,.5,12),limeD); m.position.y=-.25; g.add(m); var h=new T.Mesh(new T.SphereGeometry(.14,16,12),lime); h.position.y=-.53; g.add(h); root.add(g); return g;}
     armA=arm(-1); armB=arm(1);
